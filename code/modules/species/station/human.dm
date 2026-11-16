@@ -3,7 +3,7 @@
 	name = "Human"
 	name_plural = "Humans"
 	primitive_form = /decl/species/monkey::uid
-	description = "A medium-sized creature prone to great ambition. If you are reading this, you are probably a human."
+	description = "A medium-sized creature prone to great ambition, humans are the most prominent spacefaring race. Formed of persistent predator primates as a forerunning ancestor, human tenacity and determination is admired, feared, and despised in equal measures with other races, having lead to their ascendency as the common majority. (If you are reading this, you are probably a human.)"
 	hidden_from_codex = FALSE
 	spawn_flags = SPECIES_CAN_JOIN
 	inherent_verbs = list(/mob/living/human/proc/tie_hair)
