@@ -1,0 +1,54 @@
+/datum/map/tradeship
+	name = "Tradeship"
+	full_name = "Tradeship Ocelot Alpha"
+	path = "tradeship"
+	ground_noun = "deck"
+
+	station_name  = "Tradeship Ocelot Alpha"
+	station_short = "Ocelot"
+
+	dock_name     = "FTS Capitalist's Rest"
+	boss_name     = "FTU Merchant Navy"
+	boss_short    = "Merchant Admiral"
+	company_name  = "Legit Cargo Ltd."
+	company_short = "LC"
+	lobby_screens = list('maps/tradeship/lobby/bloodmoney.png','maps/tradeship/lobby/vapormoney.png')
+	overmap_ids = list(OVERMAP_ID_SPACE)
+	num_exoplanets = 1
+	welcome_sound = 'sound/effects/cowboysting.ogg'
+	emergency_shuttle_leaving_dock = "Attention all hands: the escape pods have been launched, maintaining burn for %ETA%."
+	emergency_shuttle_called_message = "Attention all hands: emergency evacuation procedures are now in effect. Escape pods will launch in %ETA%."
+	emergency_shuttle_recall_message = "Attention all hands: emergency evacuation sequence aborted. Return to normal operating conditions."
+	evac_controller_type = /datum/evacuation_controller/lifepods
+
+	starting_money = 5000
+	department_money = 0
+	salary_modifier = 0.2
+
+	radiation_detected_message = "High levels of radiation have been detected in proximity of the %STATION_NAME%. Please move to a shielded area such as the cargo bay, dormitories or medbay until the radiation has passed."
+	default_telecomms_channels = list(COMMON_FREQUENCY_DATA)
+	_background_categories = list(
+		/decl/background_category/heritage,
+		/decl/background_category/citizenship,
+		/decl/background_category/faction,
+		/decl/background_category/religion
+	)
+
+	available_background_info = list(
+		/decl/background_category/faction =     list(/decl/background_detail/faction/other),
+		/decl/background_category/heritage =    list(/decl/background_detail/heritage/other),
+		/decl/background_category/religion =    list(/decl/background_detail/religion/other),
+		/decl/background_category/citizenship = list(/decl/background_detail/citizenship/other)
+	)
+
+	default_background_info = list(
+		/decl/background_category/citizenship = /decl/background_detail/citizenship/other,
+		/decl/background_category/homeworld   = /decl/background_detail/location/other,
+		/decl/background_category/faction     = /decl/background_detail/faction/other,
+		/decl/background_category/heritage    = /decl/background_detail/heritage/other,
+		/decl/background_category/religion    = /decl/background_detail/religion/other
+	)
+
+/datum/map/tradeship/get_map_info()
+	return "You're aboard the <b>[station_name],</b> a survey and mercantile vessel affiliated with the Free Trade Union. \
+	No meaningful authorities can claim the planets and resources in this uncharted sector, so their exploitation is entirely up to you - mine, poach and deforest all you want."
