@@ -11,3 +11,6 @@
 #ifdef MODPACK_STANDARD_JOBS
 #include "psionics/psi_jobs.dm"
 #endif
+#ifdef MODPACK_ALFAR_SPECIES
+#include "psionics/alfar_psi.dm"
+#endif

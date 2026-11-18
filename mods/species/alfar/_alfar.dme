@@ -1,0 +1,9 @@
+#ifndef MODPACK_ALFAR_SPECIES
+#define MODPACK_ALFAR_SPECIES
+// BEGIN_INCLUDE
+#include "_alfar.dm"
+#include "datum\ears.dm"
+#include "datum\species.dm"
+#include "datum\species_bodytypes.dm"
+// END_INCLUDE
+#endif

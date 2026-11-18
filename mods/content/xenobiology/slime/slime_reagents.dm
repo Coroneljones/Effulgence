@@ -17,7 +17,7 @@
 
 /decl/material/liquid/water/affect_touch(var/mob/living/victim, var/removed, var/datum/reagents/holder)
 	. = ..()
-	if(isslime(victim))
+	if(isslime(victim) || victim.get_species()?.uid == "species_promethean")
 		victim.take_damage(10 * removed, TOX)
 		var/mob/living/slime/slime_victim = victim
 		if(istype(slime_victim) && istype(slime_victim.ai, /datum/mob_controller/slime))
@@ -28,7 +28,7 @@
 		if(CHEM_DOSE(victim, src) == removed)
 			var/reagent_name = get_reagent_name(holder) // mostly to check masked name, but handles phase too
 			victim.visible_message( \
-				SPAN_DANGER("\The [slime_victim]'s flesh sizzles where \the [reagent_name] touches it!"), \
+				SPAN_DANGER("\The [victim]'s flesh sizzles where \the [reagent_name] touches it!"), \
 				SPAN_DANGER("Your flesh is burned by \the [reagent_name]!"))
 			SET_STATUS_MAX(victim, STAT_CONFUSE, 2)
 			var/datum/mob_controller/slime/slime_ai = victim.ai
@@ -37,7 +37,7 @@
 
 /decl/material/liquid/water/affect_blood(var/mob/living/M, var/removed, var/datum/reagents/holder)
 	..()
-	if(isslime(M))
+	if(isslime(M) || M.get_species()?.uid == "species_promethean")
 		M.take_damage(2 * removed, TOX)
 
 /decl/material/liquid/frostoil/affect_blood(var/mob/living/M, var/removed, var/datum/reagents/holder)

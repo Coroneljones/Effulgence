@@ -1,8 +1,8 @@
 /datum/event/toilet_clog
 	var/clog_min = 1
-	var/clog_max = 3
+	var/clog_max = 2
 	var/clog_severity_min = 1
-	var/clog_severity_max = 2
+	var/clog_severity_max = 1
 
 /datum/event/toilet_clog/start()
 	var/clog_amt = rand(clog_min,clog_max)
@@ -13,7 +13,7 @@
 		if((toilet.z in affecting_z) && toilet.clog(clog_severity)) clog_amt--
 
 /datum/event/toilet_clog/flood
-	clog_min = 3
-	clog_max = 5
-	clog_severity_min = 3
+	clog_min = 1
+	clog_max = 3
+	clog_severity_min = 1
 	clog_severity_max = 3

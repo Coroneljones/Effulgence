@@ -1,5 +1,5 @@
 /decl/modpack/spacer
-	name = "Spaver"
+	name = "Spacer"
 
 /decl/modpack/spacer/pre_initialize()
 	..()

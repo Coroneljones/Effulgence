@@ -6,12 +6,16 @@
 	to places lacking in both light and atmosphere. As such, they're quite resistant to asphyxiation as well as \
 	toxins, but they suffer from weakened bone structure and a marked vulnerability to bright lights."
 
+	available_bodytypes = list(
+		/decl/bodytype/human/spacer,
+		/decl/bodytype/human/spacer/masculine
+	)
+
 	oxy_mod =   0.8
 	breath_pressure = 14
 	toxins_mod =   0.9
 	brute_mod = 1.1
 	burn_mod =  1.1
-	eye_darksight_range = 8
 
 	hazard_high_pressure = HAZARD_HIGH_PRESSURE * 0.8            // Dangerously high pressure.
 	warning_high_pressure = WARNING_HIGH_PRESSURE * 0.8          // High pressure warning.

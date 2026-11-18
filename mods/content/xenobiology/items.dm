@@ -18,8 +18,14 @@
 	slime_weaken = 3
 
 /obj/item/projectile/beam/stun/xeno/on_hit(var/atom/target, var/blocked = 0, var/def_zone = null)
-	if(isslime(target) && slime_weaken)
-		var/mob/living/victim = target
+	var/mob/living/victim
+	if(isslime(target))
+		victim = target
+	else if(istype(target, /mob/living/human))
+		var/mob/living/human/human_target = target
+		if(human_target.get_species()?.uid == "species_promethean")
+			victim = human_target
+	if(victim && slime_weaken)
 		SET_STATUS_MAX(victim, STAT_WEAK, slime_weaken)
 	return ..()
 
@@ -31,7 +37,7 @@
 	return ..(ml, material_key, loaded_cell_type = /obj/item/cell/device/high)
 
 /obj/item/baton/slime/apply_baton_effects(mob/living/target, mob/living/user, stun, agony, obj/item/organ/external/affecting, hit_zone)
-	if(!isslime(target)) // Add check for prometheans here if added.
+	if(!isslime(target) && (!istype(target, /mob/living) || target.get_species()?.uid != "species_promethean"))
 		return
 	msg_admin_attack("[key_name(user)] stunned [key_name(target)] with \the [src].")
 	deductcharge(hitcost)

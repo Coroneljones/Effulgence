@@ -1,0 +1,10 @@
+#ifndef MODPACK_PROMETHEAN_SPECIES
+#define MODPACK_PROMETHEAN_SPECIES
+// BEGIN_INCLUDE
+#include "_promethean.dm"
+#include "datum\organs.dm"
+#include "datum\slime.dm"
+#include "datum\species.dm"
+#include "datum\species_bodytypes.dm"
+// END_INCLUDE
+#endif

@@ -146,6 +146,8 @@
 
 /mob/living/human/adjustOxyLoss(var/damage, var/do_update_health = TRUE)
 	. = FALSE
+	if(damage > 0 && species)
+		damage *= species.oxy_mod
 	if(need_breathe())
 		var/obj/item/organ/internal/lungs/breathe_organ = get_organ(get_bodytype().breathing_organ, /obj/item/organ/internal/lungs)
 		if(breathe_organ)
